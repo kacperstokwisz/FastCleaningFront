@@ -1,0 +1,15 @@
+header {
+  background-color: rgb(47, 75, 235);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.header {
+  &__logo {
+    color: white;
+    font-size: 20px;
+  }
+}
