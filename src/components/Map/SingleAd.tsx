@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { AdEntity } from "types";
 
-interface Props {}
+interface Props {
+  id: string;
+}
 
 export const SingleAd = (props: Props) => {
+  const { id } = props;
+  const [data, setData] = useState<AdEntity | null>(null);
+
+  useEffect(() => {
+    (async () => {
+      const res = await fetch(`http://localhost:3001/ad/${id}`);
+      const data = await res.json();
+      setData(data);
+    })();
+  }, []);
+
+  if (data === null) {
+    return <p>Wczytywanie...</p>;
+  }
   return (
     <>
-      <h2>Name</h2>
-      <p>Description</p>
+      <h2>{data.id}</h2>
+      <p>{data.description}</p>
       <p>
-        <b>Price zł</b>
+        <b>{data.price}zł</b>
       </p>
-      <hr />
-      <a href="https://google.pl" target="_blank" rel="noreferrer">
-        Otwórz ogłoszenie
-      </a>
     </>
   );
 };

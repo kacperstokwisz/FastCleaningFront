@@ -20,7 +20,7 @@ const Map = (props: Props) => {
         />
         <Marker position={[50.2657152, 18.9945008]}>
           <Popup>
-            <SingleAd />
+            <SingleAd id={"aaa"}/>
           </Popup>
         </Marker>
       </MapContainer>
