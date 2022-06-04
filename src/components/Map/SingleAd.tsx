@@ -22,7 +22,7 @@ export const SingleAd = (props: Props) => {
   }
   return (
     <>
-      <h2>{data.id}</h2>
+      <h2>{data.name}</h2>
       <p>{data.description}</p>
       <p>
         <b>{data.price}zł</b>
