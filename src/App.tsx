@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Header } from "./components/layout/Header/Header";
 import { Map } from "./components/Map/Map";
+import { SearchContext } from "./contexts/search.context";
 
 function App() {
+  const [search, setSearch] = useState("");
+
   return (
-    <>
-      <Header /> 
+    <SearchContext.Provider value={{ search, setSearch }}>
+      <Header />
       <Map />
-    </>
+    </SearchContext.Provider>
   );
 }
 
