@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "types": ["../FastCleaningBack/types"]
+      "types": ["../fast-cleaning-back/types"]
     }
   }
 }
