@@ -9,7 +9,7 @@ const Header = () => {
     <header>
       <div className="header__logo">szybkiesprzatanie.networkmanager.pl
 </div>
-      <Button text="Dodaj ogłoszenie" />
+      <Button to="/add" text="Dodaj ogłoszenie" />
       <TopSearch />
     </header>
   );
