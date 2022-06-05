@@ -9,8 +9,8 @@ interface Props {
 
 const Button = (props: Props) =>
   props.to ? (
-    <Link className="btn" to={props.to}>
-      {props.text}
+    <Link to={props.to}>
+      <button>{props.text}</button>
     </Link>
   ) : (
     <button>{props.text}</button>
