@@ -3,6 +3,7 @@ import { Button } from "../common/Button/Button";
 import { geocode } from "../../utils/geocoding";
 
 import "./AddForm.scss";
+import { apiUrl } from "../../config/api";
 
 const AddForm = () => {
   const [loading, setLoading] = useState(false);
@@ -23,7 +24,7 @@ const AddForm = () => {
     try {
       const { lat, lon } = await geocode(form.address);
 
-      const res = await fetch(`http://localhost:3001/ad`, {
+      const res = await fetch(`${apiUrl}/ad`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

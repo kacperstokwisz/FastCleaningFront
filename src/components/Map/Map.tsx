@@ -7,6 +7,7 @@ import "./Map.scss";
 import { SingleAd } from "./SingleAd";
 import { SearchContext } from "../../contexts/search.context";
 import { SimpleAdEntity } from "types";
+import { apiUrl } from "../../config/api";
 
 interface Props {}
 
@@ -18,7 +19,7 @@ const Map = (props: Props) => {
 
   useEffect(() => {
     (async () => {
-      const res = await fetch(`http://localhost:3001/ad/search/${search}`);
+      const res = await fetch(`${apiUrl}/ad/search/${search}`);
       const data = await res.json();
 
       setAds(data);
